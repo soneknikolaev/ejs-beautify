@@ -35,7 +35,7 @@ describe('Beatify template with custom delimiters', () => {
     });
 
     it('Complex EJS template with custom delimiters', () => {
-        const template = beautify('<div><h2>Hello p@= user.name @q!</h2>p@if(links&&links.length>0){@q<h3>Also, tou received a list of vouchers</h3>p@for(var i=0;i<links.length;i++){@q<h3>p@=links[i]@q</h3>p@}@qp@}@q</div>', {
+        const template = beautify('<div><h2>Hello p@= user.name @q!</h2>p@if(links&&links.length>0){@q<h3>You received a list of vouchers</h3>p@for(var i=0;i<links.length;i++){@q<h3>p@=links[i]@q</h3>p@}@qp@}@q</div>', {
             delimiter: "@",
             openDelimiter: "p",
             closeDelimiter: "q"
@@ -47,7 +47,7 @@ describe('Beatify template with custom delimiters', () => {
                     p@= user.name @q!
                 </h2>
                 p@ if (links && links.length > 0) { @q
-                    <h3>Also, tou received a list of vouchers</h3>
+                    <h3>You received a list of vouchers</h3>
                     p@ for (var i = 0; i < links.length; i++) { @q
                         <h3>
                             p@= links[i] @q

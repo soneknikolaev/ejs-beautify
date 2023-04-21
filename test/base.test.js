@@ -37,7 +37,7 @@ describe('Beatify template without custom delimiters', () => {
     });
 
     it('Complex EJS template', () => {
-        const template = beautify('<div><h2>Hello <%= user.name %>!</h2><%if(links&&links.length>0){%><h3>Also, tou received a list of vouchers</h3><%for(var i=0;i<links.length;i++){%><h3><%=links[i]%></h3><%}%><%}%></div>');
+        const template = beautify('<div><h2>Hello <%= user.name %>!</h2><%if(links&&links.length>0){%><h3>You received a list of vouchers</h3><%for(var i=0;i<links.length;i++){%><h3><%=links[i]%></h3><%}%><%}%></div>');
 
         expect(template).toBe(dedent`
             <div>
@@ -45,7 +45,7 @@ describe('Beatify template without custom delimiters', () => {
                     <%= user.name %>!
                 </h2>
                 <% if (links && links.length > 0) { %>
-                    <h3>Also, tou received a list of vouchers</h3>
+                    <h3>You received a list of vouchers</h3>
                     <% for (var i = 0; i < links.length; i++) { %>
                         <h3>
                             <%= links[i] %>
